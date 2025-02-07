@@ -1,0 +1,39 @@
+[   
+    {
+      "title": "Tienda Joaco",
+      "languages": [
+        { "name": "react", "icon": "react-icon.png" },
+        { "name": "node-js", "icon": "node-js-icon.png" },
+        { "name": "tailwind-css", "icon": "tailwind-css-icon.png" }
+      ],
+      "image": "/images/LeFiu.jpg",
+      "link": "https://mi-sitio.com/tienda",
+      "code": null,
+      "description": "Una tienda en línea con sistema de carrito de compras y filtros dinámicos."
+    },
+    {
+      "title": "Tienda Online",
+      "languages": [
+        { "name": "react", "icon": "react-icon.png" },
+        { "name": "node-js", "icon": "node-js-icon.png" },
+        { "name": "mongodb", "icon": "mongodb-icon.png" },
+        { "name": "tailwind-css", "icon": "tailwind-css-icon.png" }
+      ],
+      "image": "/images/NanoRodados.jpeg",
+      "link": "https://mi-sitio.com/tienda",
+      "code": null,
+      "description": "Una tienda en línea con sistema de carrito de compras y filtros dinámicos."
+    },
+    {
+        "title": "Dragon Blame",
+        "languages": [
+        { "name": "html", "icon": "html-icon.png" },
+        { "name": "css", "icon": "css-icon.png" },
+        { "name": "javascript", "icon": "js-icon.png" }
+      ],
+        "image": "/images/DragonBlame.png",
+        "link": "https://juanmd14.github.io/Dragon-Blame/",
+        "code": "https://github.com/Juanmd14/Dragon-Blame",
+        "description": "Juego interactivo desarrollado en colaboración con un amigo, donde he comenzado a adentrarme al mundo de Javascript. Ambientado en un mundo fantástico, el jugador mejora sus armas y habilidades mientras explora ubicaciones, enfrenta monstruos y gana experiencia. Incluye un sistema de salud, niveles, tienda de armas y pociones, y una emocionante batalla final contra un dragón"
+      }
+]
