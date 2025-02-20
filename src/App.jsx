@@ -5,21 +5,24 @@ import Skills from './components/Skills/Skills'
 import Contacto from './components/Contacto/Contacto'
 import Header from "./components/Header/Header"
 
-
-
 function App() {
-
   return (
-    <>
-      <div className='w-full flex flex-col relative'>
+    <div className='w-full flex flex-col relative'>
       <Header />
-      {/*Nav, acomodar que quede en el medio y poner los links para inicio proyecto y contacto */}
-      <Inicio />
-      <Proyectos />
-      <Skills />
-      <Contacto />
+      {/* Envolver cada sección con un div que tenga el id correspondiente */}
+      <div id="inicio">
+        <Inicio path=""/>
       </div>
-    </>
+      <div id="proyectos">
+        <Proyectos />
+      </div>
+      <div id="skills">
+        <Skills />
+      </div>
+      <div id="contacto">
+        <Contacto />
+      </div>
+    </div>
   )
 }
 
