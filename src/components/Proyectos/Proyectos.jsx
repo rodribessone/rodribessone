@@ -6,10 +6,9 @@ export default function Proyectos() {
 
   useEffect(() => {
     const container = scrollRef.current;
-
     if (!container) return;
 
-    // Clonar los proyectos al final del contenedor
+    // Clonar los proyectos al final del contenedor para efecto infinito
     const cloneProjects = () => {
       const children = [...container.children];
       children.forEach((child) => {
@@ -18,41 +17,50 @@ export default function Proyectos() {
       });
     };
 
-    cloneProjects(); // Llama la función al inicio
+    cloneProjects();
 
     const scrollStep = 1; // Velocidad del scroll
     let scrollInterval;
 
     const startScroll = () => {
-        scrollInterval = setInterval(() => {
-          container.scrollTop -= scrollStep; // Desplaza hacia abajo
-          if (container.scrollTop <= 0) {
-            container.scrollTop = container.scrollHeight; // Reinicia al final
-          }
-        }, 20); // Ajusta el tiempo para controlar la suavidad
-      };
-  
-      startScroll();
+      scrollInterval = setInterval(() => {
+        container.scrollTop -= scrollStep;
+        if (container.scrollTop <= 0) {
+          container.scrollTop = container.scrollHeight;
+        }
+      }, 20);
+    };
+
+    const handleMouseEnter = () => clearInterval(scrollInterval);
+    const handleMouseLeave = () => startScroll();
+
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
+
+    startScroll();
 
     return () => {
       clearInterval(scrollInterval);
+      container.removeEventListener('mouseenter', handleMouseEnter);
+      container.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 
   return (
-    <section className="sticky top-0 h-[100vh] flex bg-black p-10">
-      <div className="w-1/2 m-auto">
-        <h1 className="text-6xl font-bold w-1/3 text-[#899388]">
+    <section className="sticky top-0 h-screen flex bg-gradient-to-b from-black to-gray-900 p-10">
+      {/* Texto descriptivo */}
+      <div className="w-1/2 flex flex-col justify-center text-center space-y-4">
+        <h1 className="text-6xl font-bold text-[#899388]">
           Proyectos destacados
         </h1>
-        <p className="text-xl w-1/3 m-4 text-white">
+        <p className="text-xl text-white max-w-md mx-auto">
           Mi enfoque de diseño prioriza las necesidades y preferencias de los
           usuarios. Me concentro en crear productos que mejoren la experiencia
-          del usuario, asegurándome de que sean funcionales y agradables de
-          usar.
+          del usuario, asegurándome de que sean funcionales y agradables de usar.
         </p>
       </div>
-      <div className="w-1/2 relative overflow-hidden">
+      {/* Contenedor de proyectos */}
+      <div className="w-1/2 relative overflow-hidden rounded-lg shadow-lg">
         <div
           ref={scrollRef}
           className="h-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center overflow-hidden"
@@ -60,17 +68,17 @@ export default function Proyectos() {
           {proyectos.map((proyecto, index) => (
             <div
               key={index}
-              className={`rounded bg-[#899388]/80 m-2 shadow-inner shadow-black p-4
-
-                `}
+              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black transform transition-transform duration-300 hover:scale-105"
             >
               <img
                 src={proyecto.image}
                 alt={proyecto.title}
-                className="w-4/5 h-2/5 m-auto rounded shadow-2xl shadow-black"
+                className="w-4/5 h-2/5 mx-auto rounded-lg shadow-2xl shadow-black"
               />
-              <h1 className="text-xl font-bold p-4 text-[#abb7aa]">{proyecto.title}</h1>
-              <p className="m-2">
+              <h1 className="text-xl font-bold py-4 text-[#abb7aa]">
+                {proyecto.title}
+              </h1>
+              <p className="mb-2">
                 <a
                   href={proyecto.link}
                   target="_blank"
@@ -89,18 +97,18 @@ export default function Proyectos() {
                   Ver Código
                 </a>
               </p>
-              <div className="flex flex-wrap items-center gap-2 justify-center">
+              <div className="flex flex-wrap items-center justify-center gap-2">
                 {proyecto.languages.map((lang) => (
                   <div
                     key={lang.name}
-                    className="flex items-center rounded-full border-2 px-2 gap-1"
+                    className="flex items-center rounded-full border-2 px-2 py-1 gap-1 bg-white/20"
                   >
                     <img
                       src={`/icons/${lang.icon}`}
                       alt={lang.name}
-                      className="w-6"
+                      className="w-6 h-6"
                     />
-                    <span className="text-sm">{lang.name}</span>
+                    <span className="text-sm text-white">{lang.name}</span>
                   </div>
                 ))}
               </div>

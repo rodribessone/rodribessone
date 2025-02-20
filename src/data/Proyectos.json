@@ -1,14 +1,14 @@
 [   
     {
-      "title": "Tienda Joaco",
+      "title": "LeFiu",
       "languages": [
         { "name": "react", "icon": "react-icon.png" },
         { "name": "node-js", "icon": "node-js-icon.png" },
         { "name": "tailwind-css", "icon": "tailwind-css-icon.png" }
       ],
-      "image": "/images/LeFiu.jpg",
-      "link": "https://mi-sitio.com/tienda",
-      "code": null,
+      "image": "/images/LeFiu.png",
+      "link": "https://le-fiu.vercel.app/",
+      "code": "https://github.com/rodribessone/LeFiu",
       "description": "Una tienda en línea con sistema de carrito de compras y filtros dinámicos."
     },
     {
