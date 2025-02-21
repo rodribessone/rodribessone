@@ -64,20 +64,12 @@ export default function Contacto() {
         {/* Sección alternativa a la foto */}
         <div className="md:w-1/2 flex items-center justify-center">
           {/* Puedes reemplazar este SVG con alguna ilustración que te represente o te guste */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-64 h-64 text-gray-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0v6m-8-6v6m0 0H8m8 0h2" />
-          </svg>
+          <img src='/logo.png' className='w-3/5'/>
         </div>
       </div>
       {/* Footer */}
       <div className="flex justify-between items-center mt-10 px-4">
-        <p className="text-sm">&copy; 2024</p>
+        <p className="text-sm">&copy; 2025</p>
         <a className="text-sm cursor-pointer hover:underline">Code by Rodri</a>
       </div>
     </div>

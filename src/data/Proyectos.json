@@ -4,7 +4,8 @@
       "languages": [
         { "name": "react", "icon": "react-icon.png" },
         { "name": "node-js", "icon": "node-js-icon.png" },
-        { "name": "tailwind-css", "icon": "tailwind-css-icon.png" }
+        { "name": "tailwind-css", "icon": "tailwind-css-icon.png" },
+        { "name": "mongodb", "icon": "mongodb-icon.png" } 
       ],
       "image": "/images/LeFiu.png",
       "link": "https://le-fiu.vercel.app/",
