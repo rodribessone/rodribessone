@@ -5,14 +5,16 @@ import CopiarCorreo from './CopiarMail';
 
 export default function Contacto() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-gradient-to-b from-black to-gray-900 pt-10 px-10 text-white">
-      <h1 className="text-6xl font-bold text-[#899388] text-center mb-10">
+    <div className="relative min-h-screen flex flex-col bg-gradient-to-b from-black to-gray-900 pt-10 px-6 sm:px-10 text-white">
+      <h1 className="text-4xl sm:text-6xl font-bold text-[#899388] text-center mb-8">
         Contacto
       </h1>
-      <div className="flex flex-col md:flex-row flex-grow gap-10">
+      <div className="flex flex-col md:flex-row flex-grow gap-8">
         {/* Sección de redes y contacto */}
         <div className="md:w-1/2 flex flex-col justify-center space-y-6">
-          <h2 className="text-4xl text-center text-[#899388]">MIS REDES</h2>
+          <h2 className="text-2xl sm:text-4xl text-center text-[#899388]">
+            MIS REDES
+          </h2>
           <div className="flex justify-center gap-6">
             <a
               href="https://github.com/tuUsuario"
@@ -20,7 +22,7 @@ export default function Contacto() {
               rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors"
             >
-              <FontAwesomeIcon icon={faSquareGithub} className="text-6xl" />
+              <FontAwesomeIcon icon={faSquareGithub} className="text-4xl sm:text-6xl" />
             </a>
             <a
               href="https://linkedin.com/in/tuPerfil"
@@ -28,12 +30,12 @@ export default function Contacto() {
               rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors"
             >
-              <FontAwesomeIcon icon={faLinkedin} className="text-6xl" />
+              <FontAwesomeIcon icon={faLinkedin} className="text-4xl sm:text-6xl" />
             </a>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <div className="flex items-center gap-2">
-              <p className="rounded border-2 border-[#899388] text-center text-xl px-4 py-2">
+            <div className="flex flex-col sm:flex-row items-center gap-2">
+              <p className="rounded border-2 border-[#899388] text-center text-lg sm:text-xl px-4 py-2">
                 rodrigo-bessone@hotmail.com
               </p>
               <div className="relative flex items-center justify-center">
@@ -61,14 +63,14 @@ export default function Contacto() {
             </div>
           </div>
         </div>
-        {/* Sección alternativa a la foto */}
+        {/* Sección alternativa a la foto (ilustración) */}
         <div className="md:w-1/2 flex items-center justify-center">
-          {/* Puedes reemplazar este SVG con alguna ilustración que te represente o te guste */}
-          <img src='/logo.png' className='w-3/5'/>
+          {/* Reemplaza la imagen por una ilustración o tu logo */}
+          <img src="/logo.png" alt="Ilustración" className="w-2/3 sm:w-1/2" />
         </div>
       </div>
       {/* Footer */}
-      <div className="flex justify-between items-center mt-10 px-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-8 px-4">
         <p className="text-sm">&copy; 2025</p>
         <a className="text-sm cursor-pointer hover:underline">Code by Rodri</a>
       </div>

@@ -7,11 +7,11 @@ import Header from "./components/Header/Header"
 
 function App() {
   return (
-    <div className='w-full flex flex-col relative'>
+    <div className='w-full flex flex-col relative '>
       <Header />
       {/* Envolver cada sección con un div que tenga el id correspondiente */}
       <div id="inicio">
-        <Inicio path=""/>
+        <Inicio />
       </div>
       <div id="proyectos">
         <Proyectos />
