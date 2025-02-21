@@ -9,10 +9,6 @@ export default function Skills() {
           Sobre Mí
         </h1>
         <div className="flex flex-col-reverse md:flex-row items-center gap-10">
-          {/* Sección de Habilidades 3D */}
-          <div className="md:w-1/2 flex justify-center">
-            <Habilidades3D />
-          </div>
           {/* Sección de Texto */}
           <div className="md:w-1/2 text-lg md:text-xl text-white leading-relaxed text-center md:text-left">
             <p>
@@ -26,6 +22,10 @@ export default function Skills() {
             </p>
           </div>
 
+          {/* Sección de Habilidades 3D */}
+          <div className="md:w-1/2 flex justify-center">
+            <Habilidades3D />
+          </div>
         </div>
       </div>
     </section>

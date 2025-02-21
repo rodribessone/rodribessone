@@ -6,8 +6,9 @@ export default function Proyectos() {
 
   useEffect(() => {
     const container = scrollRef.current;
-    if (!container || window.innerWidth < 768) return; // Desactiva el efecto en móviles
+    if (!container) return;
 
+    // Clonar los proyectos al final del contenedor para efecto infinito
     const cloneProjects = () => {
       const children = [...container.children];
       children.forEach((child) => {
@@ -18,7 +19,7 @@ export default function Proyectos() {
 
     cloneProjects();
 
-    const scrollStep = 1;
+    const scrollStep = 1; // Velocidad del scroll
     let scrollInterval;
 
     const startScroll = () => {
@@ -46,33 +47,35 @@ export default function Proyectos() {
   }, []);
 
   return (
-    <section className="sticky top-0 h-screen flex flex-col md:flex-row bg-gradient-to-b from-black to-gray-900 p-6 md:p-10">
-      <div className="md:w-1/2 flex flex-col justify-center text-center space-y-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#899388]">
+    <section className="sticky top-0 h-screen flex bg-gradient-to-b from-black to-gray-900 p-10">
+      {/* Texto descriptivo */}
+      <div className="w-1/2 flex flex-col justify-center text-center space-y-4">
+        <h1 className="text-6xl font-bold text-[#899388]">
           Proyectos destacados
         </h1>
-        <p className="text-lg md:text-xl text-white max-w-md mx-auto">
-          Mi enfoque de diseño prioriza las necesidades y preferencias de los usuarios...
+        <p className="text-xl text-white max-w-md mx-auto">
+          Mi enfoque de diseño prioriza las necesidades y preferencias de los
+          usuarios. Me concentro en crear productos que mejoren la experiencia
+          del usuario, asegurándome de que sean funcionales y agradables de usar.
         </p>
       </div>
-
-      {/* Contenedor de proyectos adaptable */}
-      <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg">
+      {/* Contenedor de proyectos */}
+      <div className="w-1/2 relative overflow-hidden rounded-lg shadow-lg">
         <div
           ref={scrollRef}
-          className="h-full md:grid md:grid-cols-1 md:gap-8 text-center overflow-hidden flex md:flex-none flex-row overflow-x-auto snap-x"
+          className="h-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center overflow-hidden"
         >
           {proyectos.map((proyecto, index) => (
             <div
               key={index}
-              className="snap-center flex-shrink-0 w-4/5 md:w-full rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black transform transition-transform duration-300 hover:scale-105"
+              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black transform transition-transform duration-300 hover:scale-105"
             >
               <img
                 src={proyecto.image}
                 alt={proyecto.title}
-                className="w-full h-48 md:h-2/5 mx-auto rounded-lg shadow-2xl shadow-black"
+                className="w-4/5 h-2/5 mx-auto rounded-lg shadow-2xl shadow-black"
               />
-              <h1 className="text-lg md:text-xl font-bold py-4 text-[#abb7aa]">
+              <h1 className="text-xl font-bold py-4 text-[#abb7aa]">
                 {proyecto.title}
               </h1>
               <p className="mb-2">
