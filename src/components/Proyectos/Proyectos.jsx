@@ -5,6 +5,8 @@ export default function Proyectos() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    // Si es móvil o tablet, no activamos el scroll vertical automático
+    if (window.innerWidth < 768) return;
     const container = scrollRef.current;
     if (!container) return;
 
@@ -47,28 +49,17 @@ export default function Proyectos() {
   }, []);
 
   return (
-    <section className="sticky top-0 h-screen flex bg-gradient-to-b from-black to-gray-900 p-10">
-      {/* Texto descriptivo */}
-      <div className="w-1/2 flex flex-col justify-center text-center space-y-4">
-        <h1 className="text-6xl font-bold text-[#899388]">
-          Proyectos destacados
-        </h1>
-        <p className="text-xl text-white max-w-md mx-auto">
-          Mi enfoque de diseño prioriza las necesidades y preferencias de los
-          usuarios. Me concentro en crear productos que mejoren la experiencia
-          del usuario, asegurándome de que sean funcionales y agradables de usar.
-        </p>
-      </div>
+    <section className="sticky top-0 h-screen flex flex-col md:flex-row bg-gradient-to-b from-black to-gray-900 p-10">
       {/* Contenedor de proyectos */}
-      <div className="w-1/2 relative overflow-hidden rounded-lg shadow-lg">
+      <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg">
         <div
           ref={scrollRef}
-          className="h-full grid grid-cols-1 md:grid-cols-2 gap-8 text-center overflow-hidden"
+          className="h-full flex overflow-x-auto md:overflow-hidden md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center"
         >
           {proyectos.map((proyecto, index) => (
             <div
               key={index}
-              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black transform transition-transform duration-300 hover:scale-105"
+              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black transform transition-transform duration-300 hover:scale-105 flex-shrink-0 md:flex-shrink-0 min-w-[80%] md:min-w-0"
             >
               <img
                 src={proyecto.image}
@@ -115,6 +106,15 @@ export default function Proyectos() {
             </div>
           ))}
         </div>
+      </div>
+      {/* Texto descriptivo */}
+      <div className="md:w-1/2 flex flex-col justify-center text-center space-y-4 mt-6 md:mt-0">
+        <h1 className="text-6xl font-bold text-[#899388]">Proyectos destacados</h1>
+        <p className="text-xl text-white max-w-md mx-auto">
+          Mi enfoque de diseño prioriza las necesidades y preferencias de los usuarios.
+          Me concentro en crear productos que mejoren la experiencia del usuario,
+          asegurándome de que sean funcionales y agradables de usar.
+        </p>
       </div>
     </section>
   );
