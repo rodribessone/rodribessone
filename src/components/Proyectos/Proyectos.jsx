@@ -5,7 +5,7 @@ export default function Proyectos() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    // Si es móvil o tablet, no activamos el scroll vertical automático
+    // Solo activar el scroll automático en pantallas >= md
     if (window.innerWidth < 768) return;
     const container = scrollRef.current;
     if (!container) return;
@@ -59,7 +59,11 @@ export default function Proyectos() {
           {proyectos.map((proyecto, index) => (
             <div
               key={index}
-              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black transform transition-transform duration-300 hover:scale-105 flex-shrink-0 md:flex-shrink-0 min-w-[80%] md:min-w-0"
+              // Ajustes para ancho uniforme en móviles
+              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black
+                         transform transition-transform duration-300 hover:scale-105
+                         flex-shrink-0 w-[80%] max-w-sm mx-auto
+                         md:w-auto md:flex-shrink-0"
             >
               <img
                 src={proyecto.image}
@@ -69,7 +73,6 @@ export default function Proyectos() {
               <h1 className="text-xl font-bold py-4 text-[#abb7aa]">
                 {proyecto.title}
               </h1>
-
               {/* Links unificados en color y estilo */}
               <p className="mb-2 flex items-center justify-center space-x-4">
                 <a
@@ -89,8 +92,6 @@ export default function Proyectos() {
                   Ver Código
                 </a>
               </p>
-
-              {/* Lista de lenguajes en varias filas si exceden el ancho */}
               <div className="flex flex-wrap items-center justify-center gap-2">
                 {proyecto.languages.map((lang) => (
                   <div
