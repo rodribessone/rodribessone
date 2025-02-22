@@ -69,25 +69,28 @@ export default function Proyectos() {
               <h1 className="text-xl font-bold py-4 text-[#abb7aa]">
                 {proyecto.title}
               </h1>
-              <p className="mb-2">
+
+              {/* Links unificados en color y estilo */}
+              <p className="mb-2 flex items-center justify-center space-x-4">
                 <a
                   href={proyecto.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#abb7aa] hover:underline"
+                  className="px-2 py-1 border border-[#abb7aa] text-[#abb7aa] rounded transition-colors hover:bg-[#abb7aa] hover:text-black"
                 >
                   Ver Proyecto
-                </a>{' '}
-                |{' '}
+                </a>
                 <a
                   href={proyecto.code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
+                  className="px-2 py-1 border border-[#abb7aa] text-[#abb7aa] rounded transition-colors hover:bg-[#abb7aa] hover:text-black"
                 >
                   Ver Código
                 </a>
               </p>
+
+              {/* Lista de lenguajes en varias filas si exceden el ancho */}
               <div className="flex flex-wrap items-center justify-center gap-2">
                 {proyecto.languages.map((lang) => (
                   <div
@@ -107,6 +110,7 @@ export default function Proyectos() {
           ))}
         </div>
       </div>
+
       {/* Texto descriptivo */}
       <div className="md:w-1/2 flex flex-col justify-center text-center space-y-4 mt-6 md:mt-0">
         <h1 className="text-6xl font-bold text-[#899388]">Proyectos destacados</h1>
