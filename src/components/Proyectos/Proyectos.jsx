@@ -51,7 +51,7 @@ export default function Proyectos() {
   return (
     <section className="sticky top-0 h-screen flex flex-col md:flex-row bg-gradient-to-b from-black to-gray-900 p-10">
       {/* Contenedor de proyectos */}
-      <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg min-h-[600px]">
+      <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg min-h-[450px]">
         <div
           ref={scrollRef}
           className="h-full flex overflow-x-auto md:overflow-hidden md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center"
