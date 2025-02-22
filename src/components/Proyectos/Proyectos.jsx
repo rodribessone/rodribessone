@@ -54,7 +54,7 @@ export default function Proyectos() {
       <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg">
         <div
           ref={scrollRef}
-          className="h-full flex overflow-x-auto md:overflow-hidden md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center min-h-[600px]"
+          className="h-full flex overflow-x-auto md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center min-h-[800px]"
         >
           {proyectos.map((proyecto, index) => (
             <div
