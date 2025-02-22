@@ -54,7 +54,7 @@ export default function Proyectos() {
       <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg">
         <div
           ref={scrollRef}
-          className="h-full flex overflow-x-auto md:overflow-hidden md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center"
+          className="h-full flex overflow-x-auto md:overflow-hidden md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center min-h-[450px]"
         >
           {proyectos.map((proyecto, index) => (
             <div
@@ -64,7 +64,7 @@ export default function Proyectos() {
                 transform transition-transform duration-300 hover:scale-105
                 flex-shrink-0 w-[80%] max-w-sm mx-auto
                 md:w-auto md:flex-shrink-0
-                min-h-[350px]   /* <- Ajusta esta altura a tu preferencia */
+                min-h-[450px]   /* <- Ajusta esta altura a tu preferencia */
               "
             >
               <img
