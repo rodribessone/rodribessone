@@ -10,7 +10,7 @@ export default function Proyectos() {
     const container = scrollRef.current;
     if (!container) return;
 
-    // Clonar los proyectos al final del contenedor para efecto infinito
+    // Clonar proyectos para efecto infinito
     const cloneProjects = () => {
       const children = [...container.children];
       children.forEach((child) => {
@@ -21,7 +21,7 @@ export default function Proyectos() {
 
     cloneProjects();
 
-    const scrollStep = 1; // Velocidad del scroll
+    const scrollStep = 1; // Velocidad de scroll
     let scrollInterval;
 
     const startScroll = () => {
@@ -59,11 +59,13 @@ export default function Proyectos() {
           {proyectos.map((proyecto, index) => (
             <div
               key={index}
-              // Ajustes para ancho uniforme en móviles
-              className="rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black
-                         transform transition-transform duration-300 hover:scale-105
-                         flex-shrink-0 w-[80%] max-w-sm mx-auto
-                         md:w-auto md:flex-shrink-0"
+              className="
+                rounded-lg bg-[#899388]/80 m-2 p-4 shadow-inner shadow-black
+                transform transition-transform duration-300 hover:scale-105
+                flex-shrink-0 w-[80%] max-w-sm mx-auto
+                md:w-auto md:flex-shrink-0
+                min-h-[350px]   /* <- Ajusta esta altura a tu preferencia */
+              "
             >
               <img
                 src={proyecto.image}
@@ -73,21 +75,21 @@ export default function Proyectos() {
               <h1 className="text-xl font-bold py-4 text-[#abb7aa]">
                 {proyecto.title}
               </h1>
-              {/* Links unificados en color y estilo */}
-              <p className="mb-2 flex items-center justify-center space-x-4">
+              <p className="mb-2">
                 <a
                   href={proyecto.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-1 border border-[#abb7aa] text-[#abb7aa] rounded transition-colors hover:bg-[#abb7aa] hover:text-black"
+                  className="text-[#abb7aa] hover:underline"
                 >
                   Ver Proyecto
-                </a>
+                </a>{' '}
+                |{' '}
                 <a
                   href={proyecto.code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2 py-1 border border-[#abb7aa] text-[#abb7aa] rounded transition-colors hover:bg-[#abb7aa] hover:text-black"
+                  className="text-blue-500 hover:underline"
                 >
                   Ver Código
                 </a>
