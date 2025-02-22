@@ -51,7 +51,7 @@ export default function Proyectos() {
   return (
     <section className="sticky top-0 h-screen flex flex-col md:flex-row bg-gradient-to-b from-black to-gray-900 p-10">
       {/* Contenedor de proyectos */}
-      <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg min-h-[450px]">
+      <div className="md:w-1/2 relative overflow-hidden rounded-lg shadow-lg min-h-[480px]">
         <div
           ref={scrollRef}
           className="h-full flex overflow-x-auto md:overflow-hidden md:grid md:grid-cols-2 md:grid-flow-row-dense gap-8 text-center"
@@ -75,21 +75,21 @@ export default function Proyectos() {
               <h1 className="text-xl font-bold py-4 text-[#abb7aa]">
                 {proyecto.title}
               </h1>
-              <p className="mb-2">
+               {/* Links unificados en color y estilo */}
+               <p className="mb-2 flex items-center justify-center space-x-4">
                 <a
                   href={proyecto.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#abb7aa] hover:underline"
+                  className="px-2 py-1 border border-[#abb7aa] text-[#abb7aa] rounded transition-colors hover:bg-[#abb7aa] hover:text-black"
                 >
                   Ver Proyecto
-                </a>{' '}
-                |{' '}
+                </a>
                 <a
                   href={proyecto.code}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
+                  className="px-2 py-1 border border-[#abb7aa] text-[#abb7aa] rounded transition-colors hover:bg-[#abb7aa] hover:text-black"
                 >
                   Ver Código
                 </a>
