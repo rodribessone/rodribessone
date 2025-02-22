@@ -32,81 +32,61 @@ const Habilidades3D = () => {
     <div className="text-center">
       {/* Etiquetas para las habilidades */}
       <div id="habilidadesTags" className="hidden">
-        <ul>
+        <ul className="flex flex-wrap justify-center gap-4">
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/html-icon.png"
-                alt="HTML"
-                className="w-10 h-10 mb-1"
-              />
+              <img src="/icons/html-icon.png" alt="HTML" className="w-10 h-10 mb-1" />
               <span className="text-sm text-white">HTML</span>
             </a>
           </li>
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/css-icon.png"
-                alt="CSS"
-                className="w-10 h-10 mb-1"
-              />
+              <img src="/icons/css-icon.png" alt="CSS" className="w-10 h-10 mb-1" />
               <span className="text-sm text-white">CSS</span>
             </a>
           </li>
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/js-icon.png"
-                alt="JavaScript"
-                className="w-10 h-10 mb-1"
-              />
+              <img src="/icons/js-icon.png" alt="JavaScript" className="w-10 h-10 mb-1" />
               <span className="text-sm text-white">JavaScript</span>
             </a>
           </li>
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/react-icon.png"
-                alt="React"
-                className="w-10 h-10 mb-1"
-              />
+              <img src="/icons/react-icon.png" alt="React" className="w-10 h-10 mb-1" />
               <span className="text-sm text-white">React</span>
             </a>
           </li>
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/tailwind-css-icon.png"
-                alt="Tailwind"
-                className="w-10 h-10 mb-1"
-              />
+              <img src="/icons/tailwind-css-icon.png" alt="Tailwind" className="w-10 h-10 mb-1" />
               <span className="text-sm text-white">Tailwind</span>
             </a>
           </li>
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/mongodb-icon.png"
-                alt="Mongodb"
-                className="w-10 h-10 mb-1"
-              />
+              <img src="/icons/mongodb-icon.png" alt="MongoDB" className="w-10 h-10 mb-1" />
               <span className="text-sm text-white">MongoDB</span>
             </a>
           </li>
           <li>
             <a href="#" className="flex flex-col items-center">
-              <img
-                src="/icons/node-js-icon.png"
-                alt="Node-js"
-                className="w-10 h-10 mb-1"
-              />
-              <span className="text-sm text-white">Node-js</span>
+              <img src="/icons/node-js-icon.png" alt="Node.js" className="w-10 h-10 mb-1" />
+              <span className="text-sm text-white">Node.js</span>
             </a>
           </li>
         </ul>
       </div>
+
       {/* Canvas donde se renderiza la esfera */}
-      <canvas id="habilidadesCanvas" width={500} height={500}></canvas>
+      <div className="mx-auto w-full max-w-[500px] aspect-square">
+        <canvas
+          id="habilidadesCanvas"
+          width="500"
+          height="500"
+          className="w-full h-full"
+        ></canvas>
+      </div>
     </div>
   );
 };
