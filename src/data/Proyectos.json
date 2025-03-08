@@ -13,16 +13,16 @@
       "description": "Una tienda en línea con sistema de carrito de compras y filtros dinámicos."
     },
     {
-      "title": "Tienda Online",
+      "title": "Nano Rodados",
       "languages": [
         { "name": "react", "icon": "react-icon.png" },
         { "name": "node-js", "icon": "node-js-icon.png" },
         { "name": "mongodb", "icon": "mongodb-icon.png" },
         { "name": "tailwind-css", "icon": "tailwind-css-icon.png" }
       ],
-      "image": "/images/NanoRodados.jpeg",
-      "link": "https://mi-sitio.com/tienda",
-      "code": null,
+      "image": "/images/NanoRodados.png",
+      "link": "https://nano-rodados.onrender.com/",
+      "code": "https://github.com/rodribessone/NANO-Rodados",
       "description": "Una tienda en línea con sistema de carrito de compras y filtros dinámicos."
     },
     {
